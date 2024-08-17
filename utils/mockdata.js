@@ -1,4 +1,4 @@
-export const restoList = [
+export const data = [
     {
       "info": {
         "id": "36014",
