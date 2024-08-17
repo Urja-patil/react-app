@@ -1,0 +1,2 @@
+export const imgUri = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const logoUri = "https://www.uidownload.com/files/909/69/136/organic-food-restaurant-logo-template-free-vector.jpg"

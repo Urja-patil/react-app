@@ -1,3 +1,77 @@
 #h1 {
     color: blue;
 }
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+}
+
+.header ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.header ul li {
+    margin-left: 20px; /* Space between navigation items */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center container */
+    padding: 20px; /* Space inside the container */
+    background-color: #fff; /* Background color of the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+    border-radius: 8px; /* Optional: Rounds corners */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Adjust as needed */
+    margin: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card > img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.filter-btn {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Hover effect */
+.filter-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Focus effect */
+.filter-btn:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+}
