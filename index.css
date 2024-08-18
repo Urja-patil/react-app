@@ -28,6 +28,19 @@
     gap: 20px; /* Space between cards */
 }
 
+.shimmer-container {
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center container */
+    padding: 20px; /* Space inside the container */
+    background-color: #fff; /* Background color of the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+    border-radius: 8px; /* Optional: Rounds corners */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+}
+
 .card {
     background-color: #fff;
     border-radius: 10px;
@@ -36,6 +49,18 @@
     width: 300px; /* Adjust as needed */
     margin: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shimmer-card {
+    background-color: rgb(205, 209, 213);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(167, 165, 165, 0.1);
+    overflow: hidden;
+    width: 200px; /* Adjust as needed */
+    height: 400px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
