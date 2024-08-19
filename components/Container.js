@@ -6,6 +6,7 @@ import { Shimmer } from "./Shimmer";
 export const RestoContainer = () => {
   let [restoList, setRestoList] = useState([]);
   const [btn, setButton] = useState("Login");
+  const [searchText, setSearchText] = useState("");
 
   handleOnClick = () => {
     const filteredList = restoList.filter((resto) => resto.info.avgRating >= 4);
@@ -31,11 +32,36 @@ export const RestoContainer = () => {
     <Shimmer />
   ) : (
     <div>
+      <div className="search">
+        <input
+          type="text"
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            const filteredList = restoList.filter((resto) =>
+              resto?.info?.name
+                ?.toLowerCase()
+                ?.includes(searchText?.toLowerCase())
+            );
+            console.log(filteredList);
+            setRestoList(filteredList);
+          }}
+        >
+          Search
+        </button>
+      </div>
       <div className="filter-btn">
         <button onClick={handleOnClick}>Top rated restaurants</button>
-        <button onClick={()=>{
-          btn === 'Login' ? setButton("Logout") : setButton("Login")
-        }}>{btn}</button>
+        <button
+          onClick={() => {
+            btn === "Login" ? setButton("Logout") : setButton("Login");
+          }}
+        >
+          {btn}
+        </button>
       </div>
       <div className="container">
         {restoList.map((ele) => {
