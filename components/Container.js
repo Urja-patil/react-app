@@ -23,10 +23,8 @@ export const RestoContainer = () => {
     fetchData();
   },[])
 
-  if(restoList?.length === 0) return <Shimmer/>
-
   return (
-    <div>
+    restoList?.length === 0? <Shimmer/> :<div>
       <div className="filter-btn">
         <button onClick={handleOnClick}>Top rated restaurants</button>
       </div>
