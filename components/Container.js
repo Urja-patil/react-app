@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { RestoCard } from "./RestoCard";
 import { Shimmer } from "./Shimmer";
+import { apiUri } from "../utils/constants";
 
 export const RestoContainer = () => {
   let [restoList, setRestoList] = useState([]);
@@ -15,9 +16,7 @@ export const RestoContainer = () => {
   };
 
   fetchData = async () => {
-    const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const res = await fetch(apiUri);
     const json = await res.json();
     console.log(json);
     setRestoList(

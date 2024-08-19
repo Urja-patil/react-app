@@ -4,7 +4,6 @@ import {logoUri} from "../utils/constants"
 const navItem = ["Home", "About", "Contact", "Cart"];
 
 export const Header = () => {
-  const [searchText, setSearchText] = useState("")
 
   return (
     <div className="header">
