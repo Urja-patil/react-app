@@ -5,12 +5,13 @@ import { Shimmer } from "./Shimmer";
 
 export const RestoContainer = () => {
   let [restoList, setRestoList] = useState([]);
+  let [filteredRestoList, setFilteredRestoList] = useState([]);
   const [btn, setButton] = useState("Login");
   const [searchText, setSearchText] = useState("");
 
   handleOnClick = () => {
     const filteredList = restoList.filter((resto) => resto.info.avgRating >= 4);
-    setRestoList(filteredList);
+    setFilteredRestoList(filteredList);
   };
 
   fetchData = async () => {
@@ -20,6 +21,9 @@ export const RestoContainer = () => {
     const json = await res.json();
     console.log(json);
     setRestoList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestoList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -36,6 +40,7 @@ export const RestoContainer = () => {
         <input
           type="text"
           onChange={(e) => {
+            setRestoList(restoList);
             setSearchText(e.target.value);
           }}
         />
@@ -46,8 +51,7 @@ export const RestoContainer = () => {
                 ?.toLowerCase()
                 ?.includes(searchText?.toLowerCase())
             );
-            console.log(filteredList);
-            setRestoList(filteredList);
+            setFilteredRestoList(filteredList);
           }}
         >
           Search
@@ -64,7 +68,7 @@ export const RestoContainer = () => {
         </button>
       </div>
       <div className="container">
-        {restoList.map((ele) => {
+        {filteredRestoList.map((ele) => {
           return <RestoCard key={ele?.info?.id} restoData={ele?.info} />;
         })}
       </div>
